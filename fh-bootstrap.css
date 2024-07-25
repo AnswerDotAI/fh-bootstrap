@@ -1,0 +1,33 @@
+figure.d-table figcaption { display: table-caption; }
+nav[data-toggle="toc"] { top: 4rem; }
+@media (min-width: 992px) {
+    .rounded-tl-lg { border-top-left-radius: 1.5rem !important; }
+}
+.rounded-lg {
+    border-top-left-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
+}
+.half-width { width: 50%; }
+:root {
+    --bs-light-yellow: #ffdb6d;
+    --bs-light-blue: #78afff;
+    --bs-light-teal: #85ffdb;
+    --bs-light-pink: #fe96c9;
+}
+.bg-blue { background-color: var(--bs-blue) !important; }
+.bg-light-blue { background-color: var(--bs-light-blue) !important; }
+.bg-indigo { background-color: var(--bs-indigo) !important; }
+.bg-purple { background-color: var(--bs-purple) !important; }
+.bg-pink { background-color: var(--bs-pink) !important; }
+.bg-light-pink { background-color: var(--bs-light-pink) !important; }
+.bg-red { background-color: var(--bs-red) !important; }
+.bg-orange { background-color: var(--bs-orange) !important; }
+.bg-yellow { background-color: var(--bs-yellow) !important; }
+.bg-light-yellow { background-color: var(--bs-light-yellow) !important; }
+.bg-green { background-color: var(--bs-green) !important; }
+.bg-teal { background-color: var(--bs-teal) !important; }
+.bg-light-teal { background-color: var(--bs-light-teal) !important; }
+.bg-cyan { background-color: var(--bs-cyan) !important; }
+.bg-white { background-color: var(--bs-white) !important; }
+.bg-gray { background-color: var(--bs-gray) !important; }
+.bg-gray-dark { background-color: var(--bs-gray-dark) !important; }

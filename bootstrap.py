@@ -12,23 +12,21 @@ fa_cfurl = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1'
 tocurl = 'https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist'
 capsels = 'figure.d-table figcaption, ' + ', '.join(f'figure.d-{k}-table figcaption'
                                                     for k in bst_sz_d.values())
-stycap = '\n'.join(
-    f'@media (min-width: {k}px) {{ figure.d-{v}-table figcaption {{ display: table-caption; }} }}'
-    for k,v in bst_sz_d.items())
 bst_hdrs = (
     Link(href=f"{bst_styleurl}/css/bootstrap.min.css", rel="stylesheet"),
     Link(href=f"{fa_cfurl}/css/all.min.css", rel="stylesheet"),
-    Style(capsels + ''' {
-          caption-side: bottom;
-          font-style: italic; font-size: 85%;
-          color: color-mix(in srgb, currentColor 75%, transparent);
-        }
-        figure.d-table figcaption { display: table-caption; }
-        nav[data-toggle="toc"] { top: 4rem; }'''),
-    Style(stycap),
+    Style(capsels + '''{
+        caption-side: bottom;
+        font-style: italic; font-size: 85%;
+        color: color-mix(in srgb, currentColor 75%, transparent);
+    }'''),
+    Style('\n'.join(
+        f'@media (min-width: {k}px) {{ figure.d-{v}-table figcaption {{ display: table-caption; }} }}'
+        for k,v in bst_sz_d.items())),
+    StyleX('fh-bootstrap.css'),
     Script(src="https://cdn.jsdelivr.net/gh/AnswerDotAI/fasthtml-js@main/fasthtml.js"),
     Script(src=f"{bst_styleurl}/js/bootstrap.bundle.min.js"),
-    Script(src=f"./toc_files/bootstrap-toc.js"),
+    Script(src=f"bs-toc.js"),
     Link(href=f"{tocurl}/bootstrap-toc.min.css", rel="stylesheet")
 )
 
@@ -120,15 +118,14 @@ def Navbar(id, selidx, items, ra_items=None, image=None, text=None, hdr_href='#'
 
 def NavText(text): return Span(text, cls='navbar-text')
 
-def Image(src, alt=None, sz:SizeT=SizeT.Sm, caption=None, pad=3, left=True, cls=''):
+def Image(src, alt=None, sz:SizeT=SizeT.Sm, caption=None, capcls='', pad=2, left=True, cls='', retina=True, **kw):
     place = 'start' if left else 'end'
+    if retina: kw['srcset'] = f'{src} 2x'
     return Figure(
         Img(src=src, alt=alt, 
-            cls=f'figure-img img-fluid {cls}'
-            ),
-        Figcaption(caption, cls=f'caption-{sz}'),
-        cls=f'd-sm-table float-{sz}-{place} me-{sz}-{pad} mb-{sz}-{pad}'
-        )
+            cls=f'figure-img img-fluid {cls}', **kw),
+        Figcaption(caption, cls=f'caption-{sz} {capcls} text-center'),
+        cls=f'd-sm-table float-{sz}-{place} mx-{sz}-{pad+1} my-{sz}-{pad}')
 
 def Icon(ico, dark=False, sz='', cls='', button=True, **kw):
     cls += f' {ico}'
