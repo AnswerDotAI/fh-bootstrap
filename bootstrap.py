@@ -1,8 +1,9 @@
 from fasthtml.common import *
 from enum import Enum
-from mistletoe import markdown
+from markdown import markdown
 
-def Markdown(s, **kw): return Div(NotStr(markdown(s)), **kw)
+exts = ['smarty', 'extra', 'sane_lists']
+def Markdown(s, **kw): return Div(NotStr(markdown(s, extensions=exts)), **kw)
 
 bst_sz_d = {'576':'sm', '768':'md', '992':'lg', '1200':'xl', '1400':'xxl'}
 jsdurl = 'https://cdn.jsdelivr.net/npm'
@@ -59,8 +60,8 @@ class SizeT(VEnum):
     Xl = 'xl'
     Xxl = 'xxl'
 
-def Container(*c, typ:ContainerT|str=ContainerT.Basic, mt=0, **kw):
-    return Div(*c, cls=f'{typ} mt-{mt}', **kw)
+def Container(*c, typ:ContainerT|str=ContainerT.Basic, cls='', **kw):
+    return Div(*c, cls=f'{typ} {cls}', **kw)
 
 class PlacementT(VEnum):
     Default = ''
