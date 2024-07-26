@@ -9,7 +9,7 @@ def page():
     return BstPage(0, 'About FastHTML', *secs)
 
 s1 = """
-You're using a FastHTML app right now. We didn't create a separate blog system for this site, because with FastHTML building apps is so easy there's no need for it! Here's the [source code](https://github.com/AnswerDotAI/fh-bootstrap/blob/main/overview.py) for the page you're reading right now. You'll see that the source code is very simple, relying on Python components like `Markdown` to build the page. The components are simple Python functions---for instance here is the [source code for `Markdown`](https://github.com/AnswerDotAI/fh-bootstrap/blob/main/bootstrap.py#L5), taking just one line of code!
+You're using a FastHTML app right now. We didn't create a separate blog system for this site, because with FastHTML building apps is so easy there's no need for it! Here's the [source code](https://github.com/AnswerDotAI/fh-bootstrap/blob/main/overview.py) for the page you're reading right now. You'll see that the source code is very simple, relying on Python components like `Markdown` to build the page. The components are simple Python functions---here is the [source code for `Markdown`](https://github.com/AnswerDotAI/fh-bootstrap/blob/main/bootstrap.py#L5-L6), taking just two lines of code!
 
 If you're an experienced web dev, then you can use all your knowledge of CSS, HTML, JS, etc to build web applications with FastHTML right away. We've heard from expert coders that they've successfully built complete web apps within an hour of getting started with FastHTML. We've got a [Quickstart for Web Devs](https://docs.fastht.ml/quickstart_for_web_devs.html) that will get you up and running quickly (and read the rest of the docs while you're there!). Also, read through the heavily-commented source of this [idiomatic fasthtml app](https://github.com/AnswerDotAI/fasthtml/blob/main/examples/adv_app.py). Then, study some of the [fasthtml-example applications](https://github.com/AnswerDotAI/fasthtml-example), particularly the first four listed.
 
@@ -32,7 +32,7 @@ FastHTML is a framework that deals with all these issues: it returns to the root
 
 Coding is the key to turning the ideas in your head into the products and services that can help people. AI has recently made it easier to get started with coding, which means there are more people than ever before who can create useful stuff.
 
-But this new generation of coders do not generally have the same background as full-time software engineers. They may have been trained in a different field, or they may have learned to code on their own. We hope that FastHTML will make it easier for this new generation of coders to turn their ideas into reality, and to create maintainable and scalable solutions which they can iterate on and continuously improve.
+But this new generation of coders do not generally have the same background as full-time software engineers. They may have been trained in a different field, or they may have learned to code on their own. We hope that FastHTML will make it easier for this new generation of coders to turn their ideas into reality. To create maintainable and scalable solutions which they can iterate on and continuously improve.
 """
 
 s3 = """
@@ -40,7 +40,7 @@ FastHTML works well right now, but it's still young. We are using it for nearly 
 
 We're working on a number of things to make FastHTML even better. Not everything is ready "out of the box" yet. If you see something missing that you need, please let us know by [creating an issue](https://github.com/AnswerDotAI/fasthtml/issues). Or feel free to add it yourself and send in a PR!
 
-The plan is for FastHTML to do just about everything that frameworks like Django, NextJS, and Ruby on Rails do, but it'll take a while to get there! For experienced developers, adding bindings to CSS frameworks, pypi Python modules, and JS libraries is straightforward---if you add one, please put your binding module on pypi so that the community can use it, and let us know so we can link to your project.
+The plan is for FastHTML to do just about everything that frameworks like Django, NextJS, and Ruby on Rails do, but it'll take a while to get there! For experienced developers, adding bindings to CSS frameworks, pypi Python modules, and JS libraries is straightforward---if you add one, please put your binding module on pypi so that the community can use it, and let us know so we can link to your project. We invite you to use the "`fh-`" prefix on PyPI to make it easy to identify FastHTML packages there.
 
 Here's a few of the things on our short to medium term agenda:
 
