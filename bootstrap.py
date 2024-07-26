@@ -2,8 +2,7 @@ from fasthtml.common import *
 from enum import Enum
 from markdown import markdown
 
-exts = ['smarty', 'extra', 'sane_lists']
-def Markdown(s, **kw): return Div(NotStr(markdown(s, extensions=exts)), **kw)
+def Markdown(s, **kw): return Div(NotStr(markdown(s, extensions=['smarty', 'extra', 'sane_lists'])), **kw)
 
 bst_sz_d = {'576':'sm', '768':'md', '992':'lg', '1200':'xl', '1400':'xxl'}
 jsdurl = 'https://cdn.jsdelivr.net/npm'
