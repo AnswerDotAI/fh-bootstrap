@@ -24,7 +24,6 @@ A FastHTML application can start as a single Python file. In fact, it can stay a
 
 FastHTML applications don’t require learning about and installing separate CSS and JavaScript frameworks. You can pip install a complete style library, such as a UI toolkit or template, and use it entirely from Python. We’re building FastHTML libraries for DaisyUI, Bootstrap, Shoelace, Flowbite, and more. You can use these, or create your own, and customise them all with Python. You can pip install additional functionality provided by JavaScript and Python libraries, both controllable entirely from Python."""
 
-
 s3 = """FastHTML scales up by taking advantage of the foundations of the web. Because a FastHTML application directly uses HTTP, HTML, JavaScript, and CSS, there’s nothing standing between your application and power of the web. FastHTML comes with powerful yet simple tools for function-level and handler-level caching, async, threading, HTML partials, and so forth.
 
 The most important thing is that the fundamentals you started out with when you scaled down, are identical to those you’ll use when you scale up! Same language, same libraries, same abstractions. As you continue on your web programming journey, as you learn more and more, all your new skills become more and more powerful!"""

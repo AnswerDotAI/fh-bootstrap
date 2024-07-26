@@ -17,7 +17,7 @@ If you haven't done much (or any) web development, try following through each st
 """
 
 s2 = """
-FastHTML is a system for writing web applications in Python. It is designed to be simple, powerful, and flexible. It is also designed to be easy to learn and use. It's inspired by technologies such as React JSX, Hotwire, Astro, FastAPI, and Phoenix LiveView.
+FastHTML is a system for writing web applications in Python. It is designed to be simple, powerful, and flexible. It is also designed to be easy to learn and use. FastHTML is inspired by technologies such as React JSX, Hotwire, Astro, FastAPI, and Phoenix LiveView.
 
 The project was originally started by Jeremy Howard at Answer.AI for a number of reasons:
 
