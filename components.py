@@ -32,6 +32,16 @@ FastHTML's underlying component data structure is called `XT` ("XML tag"). To le
 Some functions, such as `File`, have special syntax for their arguments. For instance, `File` takes a single filename argument, and creates a DOM subtree representing the contents of the file.
 
 Any FastHTML handler can return a tree of `XT` components, or a tuple of XT component trees, which will be rendered as HTML partials and sent to the client for processing by HTMX. If a user goes directly to a URL rather than using HTMX, the server will automatically return a full HTML page with the partials embedded in the body.
+
+Much of the time you'll probably be using pre-written FastHTML components that package up HTML, CSS, and JS. Often, these will in turn hand off much of the work to some general web framework; for instance the site you're reading now uses Bootstrap (and the `fh-bootstrap` FastHTML wrapper).
+
+Another good approach to creating components is to find things you like on the web and convert them to FastHTML. There's a simple trick to doing this:
+
+1. Right-click on the part of a web page that you want to use in your app, and choose 'Inspect'
+1. In the elements window that pops up, right-click on the element you want, choose 'Copy', and then 'Outer HTML'
+1. Now you've got HTML in your clipboard, you can automatically convert it to FastHTML: go to [h2x.answer.ai](https://h2x.answer.ai/), paste the HTML into the text area at the top, then the FastHTML code will appear at the bottom. Click the Copy icon at the top right of that code and then paste it into your Python app.
+
+BTW, the h2x app mentioned above is written in around a dozen lines of code! You can see the [source code here](https://github.com/AnswerDotAI/fasthtml-example/blob/main/h2x/main.py).
 """
 
 s3 = """
