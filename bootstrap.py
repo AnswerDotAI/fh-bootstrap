@@ -24,10 +24,10 @@ bst_hdrs = (
     Style('\n'.join(
         f'@media (min-width: {k}px) {{ figure.d-{v}-table figcaption {{ display: table-caption; }} }}'
         for k,v in bst_sz_d.items())),
-    StyleX('fh-bootstrap.css'),
+    StyleX('assets/fh-bootstrap.css'),
     Script(src="https://cdn.jsdelivr.net/gh/AnswerDotAI/fasthtml-js@main/fasthtml.js"),
     Script(src=f"{bst_styleurl}/js/bootstrap.bundle.min.js"),
-    Script(src=f"bs-toc.js"),
+    Script(src=f"assets/bs-toc.js"),
     Link(href=f"{tocurl}/bootstrap-toc.min.css", rel="stylesheet")
 )
 
@@ -144,3 +144,14 @@ def Toc(*c, width=2):
             cls=f'col-sm-{width}'),
         Div(*c, cls=f'col-sm-{12-width}'),
         cls='row')
+
+def BstFooter(copy, img, img_href, cs, cls='', **kw):
+    # From the bootstrap examples footers page
+    return Container(
+        Footer(
+            P(copy, cls='col-md-4 mb-0 text-muted'),
+            A(img, href=img_href,
+                cls='col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none'),
+            Ul(*[Li(o, cls='nav-item') for o in cs], 
+                cls='nav col-md-4 justify-content-end'),
+            cls=f'{cls} d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top', **kw))

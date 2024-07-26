@@ -1,9 +1,8 @@
 from app import *
 
-@rt('/vision')
-def get():
+def page():
     caption = "A minimal FastHTML app really is minimal."
-    fig = Image('hello.png', alt='Web dev', caption=caption, left=False, retina=True)
+    fig = Image('assets/hello.png', alt='Web dev', caption=caption, left=False, retina=True)
     h2s = 'No compromise', 'Scaling down', 'Scaling up'
     txts = [Markdown(s1), Div(fig, Markdown(s2)), Markdown(s3)]
     secs = Sections(h2s, txts)

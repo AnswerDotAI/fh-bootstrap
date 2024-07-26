@@ -1,31 +1,23 @@
-from fasthtml.common import *
 from bootstrap import *
 from itertools import chain
 
 ghurl = 'https://github.com/AnswerDotAI/fasthtml'
 fhurl = 'https://fastht.ml'
 
-hdrs = (Style(''':root, [data-bs-theme=light] {
-  --bs-secondary: #3cdd8c;
-  --bs-secondary-rgb: 60, 221, 140;
-}
-nav.navbar { --bs-btn-hover-bg: rgba(255,255,255,0.2); }
-.nav-link:hover { color: rgba(255,255,0,0.6); }
-.nav-link.active { font-weight: bold; }'''),)
-
-app,rt = fast_app(pico=False, hdrs=bst_hdrs+hdrs, live=True)
-
 def BstPage(selidx, title, *c):
     navitems = [('Overview', '/'), ('Vision', '/vision'), ('Foundations', '/foundation'),
                 ('Technology', '/tech'), ('Components', '/components'), ('Limitations', '#', {'disabled':True})]
     ghico = Icon('fab fa-github', dark=False, sz='lg', href=ghurl)
-    nb = Navbar('nav', selidx, items=navitems, ra_items=ghico, cls='navbar-light bg-secondary rounded-lg',
-                image='logo.svg', hdr_href=fhurl, placement=PlacementT.Default)
+    ftlinks = [A(k, href=v, cls='nav-link px-2 text-muted')
+        for k,v in dict(Home='https://www.fastht.ml', Docs='https://docs.fastht.ml', Company='https://www.answer.ai').items()]
     return (
         Title(title),
         Script('initTOC()'),
-        Container(nb,
+        Container(
+            Navbar('nav', selidx, items=navitems, ra_items=ghico, cls='navbar-light bg-secondary rounded-lg',
+                image='assets/logo.svg', hdr_href=fhurl, placement=PlacementT.Default),
             Toc(Container(H1(title, cls='pb-2 pt-1'), *c, cls='mt-3')),
+            BstFooter('© 2024 onwards AnswerDotAI, Inc', File('assets/logo.svg'), img_href='http://www.fastht.ml', cs=ftlinks),
         typ=ContainerT.Xl, cls='mt-3', data_bs_spy='scroll', data_bs_target='#toc')
     )
 

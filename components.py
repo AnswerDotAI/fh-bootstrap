@@ -1,11 +1,10 @@
 from app import *
 
-@rt('/components')
-def get():
+def page():
     h2s = 'Why', 'How', 'The future'
     txts = [Markdown(s1), Markdown(s2), Markdown(s3)]
     secs = Sections(h2s, txts)
-    return BstPage(2, "Python components", *secs)
+    return BstPage(4, "Python components", *secs)
 
 s1 = """"""
 

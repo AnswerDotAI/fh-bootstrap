@@ -1,9 +1,8 @@
 from app import *
 
-@rt('/')
-def get():
+def page():
     caption = "'Real' web development shouldn't be this hard..."
-    fig = Image('webdev.jpg', alt='Web dev', caption=caption, left=False)
+    fig = Image('assets/webdev.jpg', alt='Web dev', caption=caption, left=False)
     h2s = 'Getting started', 'Background', 'Current Status'
     txts = [Markdown(s1), Div(fig, Markdown(s2)), Markdown(s3)]
     secs = Sections(h2s, txts)
@@ -18,7 +17,7 @@ If you haven't done much (or any) web development, try following through each st
 """
 
 s2 = """
-FastHTML is a system for writing web applications in Python. It is designed to be simple, powerful, and flexible. It is also designed to be easy to learn and use.
+FastHTML is a system for writing web applications in Python. It is designed to be simple, powerful, and flexible. It is also designed to be easy to learn and use. It's inspired by technologies such as React JSX, Hotwire, Astro, FastAPI, and Phoenix LiveView.
 
 The project was originally started by Jeremy Howard at Answer.AI for a number of reasons:
 
