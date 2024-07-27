@@ -2,7 +2,7 @@ from fasthtml.common import *
 from enum import Enum
 from markdown import markdown
 
-def Markdown(s, **kw): return Div(NotStr(markdown(s, extensions=['smarty', 'extra', 'sane_lists'])), **kw)
+def Markdown(s, **kw): return Div(NotStr(markdown(s, extensions=['codehilite', 'smarty', 'extra', 'sane_lists'])), **kw)
 
 bst_sz_d = {'576':'sm', '768':'md', '992':'lg', '1200':'xl', '1400':'xxl'}
 jsdurl = 'https://cdn.jsdelivr.net/npm'
@@ -139,7 +139,7 @@ def Icon(ico, dark=False, sz='', cls='', button=True, **kw):
 def Toc(*c, width=2):
     return Div(
         Div(
-            Nav(id='toc', data_toggle='toc', cls='sticky-top'),
+            Nav(id='toc', data_toggle='toc', cls='sticky-top toc'),
             cls=f'col-sm-{width}'),
         Div(*c, cls=f'col-sm-{12-width}'),
         cls='row')

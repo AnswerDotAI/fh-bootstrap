@@ -5,7 +5,7 @@ ghurl = 'https://github.com/AnswerDotAI/fasthtml'
 fhurl = 'https://fastht.ml'
 
 def BstPage(selidx, title, *c):
-    navitems = [('Overview', '/'), ('Vision', '/vision'), ('Foundations', '/foundation'),
+    navitems = [('About', '/'), ('Vision', '/vision'), ('Foundations', '/foundation'),
                 ('Technology', '/tech'), ('Components', '/components'), ('Limitations', '#', {'disabled':True})]
     ghico = Icon('fab fa-github', dark=False, sz='lg', href=ghurl)
     ftlinks = [A(k, href=v, cls='nav-link px-2 text-muted')
