@@ -9,7 +9,7 @@ def page():
 s1 = """
 FastHTML embeds HTML generation inside Python code. The idea of embedding an HTML generator inside a programming language is not new. It is a particular popular approach in functional languages, and includes libraries like: Elm-html (Elm), hiccl (Common Lisp), hiccup (Clojure), Falco.Markup (F#), Lucid (Haskell), Phlex (Ruby), htpy (Python), and dream-html (OCaml). JSX is the most popular example of this approach.
 
-However most Python programmers are probably more familiar with template-based approaches, such as Jinja2 or Mako. Templates were originally created for web development in the 1990s, back when web design required complex browser-specific HTML. By using templates, designers were able to work in a familiar language, and programmers could "fill in the blanks" with the data they needed. Today, this is not needed, since we can create simple semantic HTML, and use CSS to style it.
+However most Python programmers are probably more familiar with template-based approaches, such as Jinja2 or Mako. Templates were originally created for web development in the 1990s, back when web design required complex browser-specific HTML. By using templates, designers were able to work in a familiar language, and programmers could "fill in the blanks" with the data they needed. Today this is not needed, since we can create simple semantic HTML, and use CSS to style it.
 
 Templates have a number of disadvantages, for instance:
 
@@ -45,7 +45,7 @@ BTW, the h2x app mentioned above is written in around a dozen lines of code! You
 """
 
 s3 = """
-We want your help! FastHTML is very new, so the ecosystem at this stage is still small. We hope to see FastHTML Python versions of style libraries like Bootstrap, DaisyUI, and Shoelace, as well as versions of all the most popular JavaScript libraries. If you are a Python developer, we would love your help in creating these libraries! If you do create something for FastHTML users, let us know, so we can link to your work (or if you think it would be a useful part of the FastHTML library itself, or one of our extension libs, feel free to send us a PR).
+We want your help! FastHTML is very new, so the ecosystem at this stage is still small. We hope to see FastHTML Python versions of style libraries like Bootstrap, DaisyUI, and Shoelace, as well as versions of all the most popular JavaScript libraries. If you are a Python developer, we would love your help in creating these libraries! If you do create something for FastHTML users, let us know, so we can link to your work (or if you think it would be a useful part of the FastHTML library itself, or one of our extension libraries, feel free to send us a pull request).
 
 We would also like to see Python modules that hook into FastHTML's and Starlette's extensibility points, such as for authentication, database access, deployment, multi-host support, and so forth. Thanks to Python's flexibility and the power of ASGI, it should be possible for a single FastHTML server to replace a whole stack of separate web servers, proxies, and other components.
 """
