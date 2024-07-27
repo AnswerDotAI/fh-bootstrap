@@ -94,13 +94,13 @@ def Navbar(id, selidx, items, ra_items=None, image=None, text=None, hdr_href='#'
         kw['data-bs-theme'] = 'dark'
         cls += ' bg-dark'
     def mk_navitem(i, o):
-        if isinstance(o, XT): return o
+        if isinstance(o, FT): return o
         text, href, *kw = o
         kw = kw[0] if kw else {}
         return NavbarItem(text, href, i==selidx, cls=itemcls, **kw)
     items = [mk_navitem(i, o) for i,o in enumerate(items)]
     if not ra_items: ra_items = []
-    if isinstance(ra_items, XT): ra_items = [ra_items]
+    if isinstance(ra_items, FT): ra_items = [ra_items]
     toggle = Button(
         Div(
             Span(cls='navbar-toggler-icon me-2'),
