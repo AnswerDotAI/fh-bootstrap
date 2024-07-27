@@ -12,7 +12,7 @@ authors = [
     { name = "Jeremy Howard", email = "info@fast.ai" }
 ]
 requires-python = ">=3.7, <4"
-dependencies = [ "fastcore", "markdown", "python-fasthtml" ]
+dependencies = [ "fastcore", "markdown", "python-fasthtml>=0.1.9" ]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
