@@ -2,7 +2,10 @@ from fasthtml.common import *
 from enum import Enum
 from markdown import markdown
 
-def Markdown(s, **kw): return Div(NotStr(markdown(s, extensions=['codehilite', 'smarty', 'extra', 'sane_lists'])), **kw)
+md_exts='codehilite', 'smarty', 'extra', 'sane_lists'
+def Markdown(s, exts=md_exts, **kw): return Div(NotStr(markdown(s, extensions=exts)), **kw)
+
+def asset(s): return Path(__file__).parent/'assets'/s
 
 bst_sz_d = {'576':'sm', '768':'md', '992':'lg', '1200':'xl', '1400':'xxl'}
 jsdurl = 'https://cdn.jsdelivr.net/npm'
@@ -23,10 +26,10 @@ bst_hdrs = (
     Style('\n'.join(
         f'@media (min-width: {k}px) {{ figure.d-{v}-table figcaption {{ display: table-caption; }} }}'
         for k,v in bst_sz_d.items())),
-    StyleX('assets/fh-bootstrap.css'),
+    StyleX(asset('fh-bootstrap.css')),
     Script(src="https://cdn.jsdelivr.net/gh/AnswerDotAI/fasthtml-js@main/fasthtml.js"),
     Script(src=f"{bst_styleurl}/js/bootstrap.bundle.min.js"),
-    Script(src=f"assets/bs-toc.js"),
+    ScriptX(asset('bs-toc.js')),
     Link(href=f"{tocurl}/bootstrap-toc.min.css", rel="stylesheet")
 )
 
@@ -127,14 +130,13 @@ def Image(src, alt=None, sz:SizeT=SizeT.Sm, caption=None, capcls='', pad=2, left
         Figcaption(caption, cls=f'caption-{sz} {capcls} text-center'),
         cls=f'd-sm-table float-{sz}-{place} mx-{sz}-{pad+1} my-{sz}-{pad}')
 
-def Icon(ico, dark=False, sz='', cls='', button=True, **kw):
-    cls += f' {ico}'
+def Icon(ico, dark=False, sz='', cls='', button=True, href='#', **kw):
     if dark: cls += ' btn-dark'
     if sz: cls += f' btn-{sz}'
     if button:
         kw['role'] = 'button'
         cls += ' btn'
-    return I(cls=cls, **kw)
+    return A(I(cls=ico), href=href, cls=cls, **kw)
 
 def Toc(*c, width=2):
     return Div(

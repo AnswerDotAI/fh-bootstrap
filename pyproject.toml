@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fh-bootstrap"
+version = "0.0.1"
+description = "Bootstrap for FastHTML"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Jeremy Howard", email = "info@fast.ai" }
+]
+requires-python = ">=3.7, <4"
+dependencies = [ "fastcore", "markdown", "python-fasthtml" ]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/AnswerDotAI/fh-bootstrap"
+
+[tool.setuptools.package-data]
+"fh_bootstrap" = ["assets/**/*"]
