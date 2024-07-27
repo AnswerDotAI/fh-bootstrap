@@ -1,3 +1,9 @@
-# fh-bootstrap
+# Bootstrap for FastHTML
 
-Table of contents (`Toc` component) based on, and largely compatible with, [this project](https://afeld.github.io/bootstrap-toc/).
+This is very incomplete! Contributions welcome. Currently working are basic versions of:
+
+- navbars
+- icons
+- figures
+- footers
+- table of contents (based on, and largely compatible with, [this project](https://afeld.github.io/bootstrap-toc/))
