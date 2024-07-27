@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fh-bootstrap"
-version = "0.0.2"
+version = "0.0.3"
 description = "Bootstrap for FastHTML"
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -12,7 +12,7 @@ authors = [
     { name = "Jeremy Howard", email = "info@fast.ai" }
 ]
 requires-python = ">=3.7, <4"
-dependencies = [ "fastcore", "markdown", "python-fasthtml>=0.1.9" ]
+dependencies = [ "fastcore", "markdown", "python-fasthtml>=0.1.10" ]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
