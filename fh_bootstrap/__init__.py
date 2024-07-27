@@ -1,9 +1,5 @@
 from fasthtml.common import *
 from enum import Enum
-from markdown import markdown
-
-md_exts='codehilite', 'smarty', 'extra', 'sane_lists'
-def Markdown(s, exts=md_exts, **kw): return Div(NotStr(markdown(s, extensions=exts)), **kw)
 
 def asset(s): return Path(__file__).parent/'assets'/s
 
