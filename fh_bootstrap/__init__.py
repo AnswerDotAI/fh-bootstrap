@@ -87,8 +87,8 @@ def NavbarItem(text, href='#', current=False, disabled=False, cls='', **kw):
     return Li(A(text, href=href, cls=acls, **kw), cls='nav-item '+cls)
 
 def Navbar(id, selidx, items, ra_items=None, image=None, text=None, hdr_href='#', dark=False,
-           cls='', itemcls='', expand='lg',
-           container=ContainerT.Fluid, placement=PlacementT.Default, **kw):
+           cls='', itemcls='', expand:SizeT=SizeT.Lg, toggle_text='More', toggle_left=True,
+           container:ContainerT=ContainerT.Fluid, placement:PlacementT=PlacementT.Default, **kw):
     image = Img(src=image, cls='d-inline-block align-text-bottom') if image else None
     if dark:
         kw['data-bs-theme'] = 'dark'
@@ -101,16 +101,21 @@ def Navbar(id, selidx, items, ra_items=None, image=None, text=None, hdr_href='#'
     items = [mk_navitem(i, o) for i,o in enumerate(items)]
     if not ra_items: ra_items = []
     if isinstance(ra_items, XT): ra_items = [ra_items]
+    toggle = Button(
+        Div(
+            Span(cls='navbar-toggler-icon me-2'),
+            Span(toggle_text, cls='small'),
+            cls='d-flex align-items-center'),
+        type='button', data_bs_toggle='collapse', data_bs_target=f'#{id}',
+        aria_controls=id, aria_expanded='false', aria_label='Toggle navigation',
+        cls='navbar-toggler p-2')
+    brand = A(image, text, href=hdr_href, cls='navbar-brand')
+    tb = [toggle,brand] if toggle_left else [brand,toggle]
     return Nav(
         Div(
-            A(image, text, href=hdr_href, cls='navbar-brand'),
-            Button(
-                Span(cls='navbar-toggler-icon'), type='button',
-                data_bs_toggle='collapse', data_bs_target=f'#{id}',
-                aria_controls=id, aria_expanded='false', aria_label='Toggle navigation',
-                cls='navbar-toggler'),
+            *tb,
             Div(
-                Ul(*items, cls='navbar-nav me-auto mb-2 mb-lg-0'), *ra_items,
+                Ul(*items, cls=f'navbar-nav me-auto mb-2 mb-{expand}-0'), *ra_items,
                 id=id, cls='collapse navbar-collapse'),
             cls=container),
         cls=f'navbar navbar-expand-{expand} {placement} {cls}', **kw)

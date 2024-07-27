@@ -1,11 +1,3 @@
-pre {
-    background-color: #f8f9fa;
-    border: 1px solid #e9ecef;
-    border-radius: 4px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-}
-
 :root {
     --bs-light-yellow: #ffdb6d;
     --bs-light-blue: #78afff;
@@ -13,14 +5,7 @@ pre {
     --bs-light-pink: #fe96c9;
     --bs-nav-link-font-size: 1.05rem;
 }
-:root, [data-bs-theme=light] {
-    --bs-secondary: #3cdd8c;
-    --bs-secondary-rgb: 60, 221, 140;
-}
 
-nav.navbar { --bs-btn-hover-bg: rgba(255,255,255,0.2); }
-.nav-link:hover { color: rgba(255,255,0,0.6); }
-.nav-link.active { font-weight: bold; }
 nav.toc {
     transform: scale(1.1);
     transform-origin: top left;
@@ -28,14 +13,6 @@ nav.toc {
 
 figure.d-table figcaption { display: table-caption; }
 nav[data-toggle="toc"] { top: 4rem; }
-
-@media (min-width: 992px) {
-    .rounded-tl-lg { border-top-left-radius: 1.5rem !important; }
-}
-.rounded-lg {
-    border-top-left-radius: 1rem !important;
-    border-top-right-radius: 1rem !important;
-}
 
 .bg-blue { background-color: var(--bs-blue) !important; }
 .bg-light-blue { background-color: var(--bs-light-blue) !important; }
@@ -54,3 +31,4 @@ nav[data-toggle="toc"] { top: 4rem; }
 .bg-white { background-color: var(--bs-white) !important; }
 .bg-gray { background-color: var(--bs-gray) !important; }
 .bg-gray-dark { background-color: var(--bs-gray-dark) !important; }
+
