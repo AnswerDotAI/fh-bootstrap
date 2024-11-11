@@ -7,7 +7,7 @@ bst_sz_d = {'576':'sm', '768':'md', '992':'lg', '1200':'xl', '1400':'xxl'}
 jsdurl = 'https://cdn.jsdelivr.net/npm'
 bst_styleurl = f'{jsdurl}/bootstrap@5.3.3/dist'
 bst_jsurl = f'{jsdurl}/bootstrap@5.3.3/dist/js'
-fa_cfurl = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1'
+fa_cfurl = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0'
 tocurl = 'https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist'
 capsels = 'figure.d-table figcaption, ' + ', '.join(f'figure.d-{k}-table figcaption'
                                                     for k in bst_sz_d.values())
